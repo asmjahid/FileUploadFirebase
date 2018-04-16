@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MultipleFileUploadActivity">
+
+    <TextView
+        android:id="@+id/main_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/multiple_file_upload"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/select_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/white_btn_background"
+        android:text="@string/select_file_to_upload"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/upload_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/select_btn"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttom_layout"
+        android:layout_marginTop="20dp">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

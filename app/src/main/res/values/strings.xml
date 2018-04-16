@@ -10,4 +10,8 @@
     <string name="filetype">FileType</string>
     <string name="your_file_is_uploading">Your File is Uploading</string>
     <string name="img">IMAGE</string>
+    <string name="multiple">Multiple File Upload</string>
+    <string name="file_upload_with_progressbar">File Upload with Progressbar</string>
+    <string name="multiple_file_upload">Multiple File Upload</string>
+    <string name="filename_type">Filename.type</string>
 </resources>

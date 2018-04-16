@@ -122,7 +122,7 @@
             android:text="@string/cancel_upload"
             android:textAllCaps="false"
             android:textColor="@color/colorOrange" />
-    </LinearLayout>
 
+    </LinearLayout>
 
 </RelativeLayout>
