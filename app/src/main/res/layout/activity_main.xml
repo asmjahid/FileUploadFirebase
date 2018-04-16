@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/nunito_semibold"
         android:text="@string/file_upload"
         android:textColor="@android:color/white"
         android:textSize="20sp"
