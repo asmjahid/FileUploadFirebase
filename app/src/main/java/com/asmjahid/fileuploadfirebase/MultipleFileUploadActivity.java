@@ -3,6 +3,7 @@ package com.asmjahid.fileuploadfirebase;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.OpenableColumns;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multiple_file_upload);
 
@@ -57,12 +59,15 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
 
 
         mSelectBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent();
                 intent.setType("image/*");
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                }
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent,"Select Picture"), RESULT_LOAD_IMAGE);
 
@@ -73,8 +78,8 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
+        super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK){
 
@@ -89,12 +94,13 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
                     String fileName = getFileName(fileUri);
 
                     fileNameList.add(fileName);
-                    fileDoneList.add("uploading");
+                    fileDoneList.add("Uploading");
                     uploadListAdapter.notifyDataSetChanged();
 
                     StorageReference fileToUpload = mStorage.child("Images").child(fileName);
 
                     final int finalI = i;
+
                     fileToUpload.putFile(fileUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
                         @Override
@@ -102,13 +108,10 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
 
                             fileDoneList.remove(finalI);
                             fileDoneList.add(finalI, "done");
-
                             uploadListAdapter.notifyDataSetChanged();
                         }
                     });
                 }
-
-                //Toast.makeText(MainActivity.this, "Selected Multiple Files", Toast.LENGTH_SHORT).show();
 
             } else if (data.getData() != null){
 
