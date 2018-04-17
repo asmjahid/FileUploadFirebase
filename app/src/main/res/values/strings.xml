@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FileUpload</string>
     <string name="file_upload">File Upload</string>
-    <string name="file_upload_sys">File Uploading System</string>
+    <string name="file_upload_sys">File Uploading System Using Firebase</string>
     <string name="select_file_to_upload">Select File to upload</string>
     <string name="pause_upload">Pause Upload</string>
     <string name="cancel_upload">Cancel Upload</string>
@@ -12,6 +12,9 @@
     <string name="img">IMAGE</string>
     <string name="multiple">Multiple File Upload</string>
     <string name="file_upload_with_progressbar">File Upload with Progressbar</string>
+    <string name="video_stream">Video Stream</string>
     <string name="multiple_file_upload">Multiple File Upload</string>
     <string name="filename_type">Filename.type</string>
+    <string name="zero">0.00</string>
+    <string name="newimage">Image</string>
 </resources>

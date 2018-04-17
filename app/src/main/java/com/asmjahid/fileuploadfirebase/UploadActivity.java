@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class UploadActivity extends AppCompatActivity {
 
-    private Button mMultipleFile,mFile;
+    private Button mMultipleFile,mFile,mVideoStream;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +17,14 @@ public class UploadActivity extends AppCompatActivity {
 
         mMultipleFile = findViewById(R.id.multiple_btn);
         mFile = findViewById(R.id.file_btn);
+        mVideoStream = findViewById(R.id.video_btn);
 
         mMultipleFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent FileIntent = new Intent(UploadActivity.this, MultipleFileUploadActivity.class);
-                startActivity(FileIntent);
+                Intent MultipleFileIntent = new Intent(UploadActivity.this, MultipleFileUploadActivity.class);
+                startActivity(MultipleFileIntent);
             }
         });
 
@@ -33,6 +34,15 @@ public class UploadActivity extends AppCompatActivity {
 
                 Intent FileIntent = new Intent(UploadActivity.this, MainActivity.class);
                 startActivity(FileIntent);
+            }
+        });
+
+        mVideoStream.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent VideoStreamIntent = new Intent(UploadActivity.this, VideoStreamActivity.class);
+                startActivity(VideoStreamIntent);
             }
         });
     }

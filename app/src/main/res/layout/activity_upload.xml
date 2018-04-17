@@ -11,11 +11,8 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/buttom_layout"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/buttom_layout"
-        android:layout_marginEnd="59dp"
-        android:layout_marginRight="59dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"
         android:fontFamily="@font/nunito_semibold"
         android:text="@string/file_upload_sys"
@@ -53,8 +50,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/pause_background"
+            android:padding="15dp"
             android:fontFamily="sans-serif"
             android:text="@string/file_upload_with_progressbar"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/video_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pause_background"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/video_stream"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimary" />
 

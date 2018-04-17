@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".UploadActivity" />
-        <activity android:name=".MultipleFileUploadActivity"></activity>
+        <activity android:name=".MultipleFileUploadActivity" />
+        <activity android:name=".VideoStreamActivity"></activity>
     </application>
 
 </manifest>
