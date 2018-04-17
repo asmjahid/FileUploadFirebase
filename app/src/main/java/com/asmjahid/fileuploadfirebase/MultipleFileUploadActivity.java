@@ -11,7 +11,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -43,7 +42,7 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
 
         mStorage = FirebaseStorage.getInstance().getReference();
 
-        mSelectBtn =  findViewById(R.id.select_btn);
+        mSelectBtn = findViewById(R.id.select_btn);
         mUploadList = findViewById(R.id.upload_list);
 
         fileNameList = new ArrayList<>();
@@ -69,7 +68,7 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
                     intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
                 }
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent,"Select Picture"), RESULT_LOAD_IMAGE);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), RESULT_LOAD_IMAGE);
 
             }
         });
@@ -81,13 +80,13 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK){
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK) {
 
-            if(data.getClipData() != null){
+            if (data.getClipData() != null) {
 
                 int totalItemsSelected = data.getClipData().getItemCount();
 
-                for(int i = 0; i < totalItemsSelected; i++){
+                for (int i = 0; i < totalItemsSelected; i++) {
 
                     Uri fileUri = data.getClipData().getItemAt(i).getUri();
 
@@ -113,7 +112,7 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
                     });
                 }
 
-            } else if (data.getData() != null){
+            } else if (data.getData() != null) {
 
                 Toast.makeText(MultipleFileUploadActivity.this, "Selected Single File", Toast.LENGTH_SHORT).show();
             }
@@ -135,7 +134,7 @@ public class MultipleFileUploadActivity extends AppCompatActivity {
         if (result == null) {
             result = uri.getPath();
             int cut = result.lastIndexOf('/');
-            if (cut != -1) {
+            if (cut != - 1) {
                 result = result.substring(cut + 1);
             }
         }
